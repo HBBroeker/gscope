@@ -597,6 +597,7 @@ void DISPLAY_always_show_image(gboolean always_show)
     int i;
     extern void gtk_image_menu_item_set_always_show_image(GtkImageMenuItem *, gboolean) __attribute__((weak));
 
+#if 0 /* That hack just does not work on Cygwin */
     // Utilize the "weak symbol" method/trick to determine if the
     // gtk_image_menu_item_set_always_show_image() function is available
     if (gtk_image_menu_item_set_always_show_image)
@@ -608,6 +609,7 @@ void DISPLAY_always_show_image(gboolean always_show)
             gtk_image_menu_item_set_always_show_image(GTK_IMAGE_MENU_ITEM(lookup_widget(GTK_WIDGET(gscope_main), item)), always_show);
         }
     }
+#endif
 }
 
 

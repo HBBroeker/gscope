@@ -1004,21 +1004,25 @@ on_preferences_activate               (GtkMenuItem     *menuitem,
                                         settings.exitConfirm );
 
 
-        // Utilize the "weak symbol" method/trick to determine if the
+#if 0
+	// Utilize the "weak symbol" method/trick to determine if the
         // gtk_image_menu_item_set_always_show_image() function is available
         /* coverity[func_conv] */
         if ( !gtk_image_menu_item_set_always_show_image )
-        {
+#endif
+	{
             // if the current gtk library does not provide gtk_image_menu_item_set_always_show_image()
             // We cannot support the "Show Menu Icons" functionality, so disable that preference item.
             gtk_widget_set_sensitive (lookup_widget(GTK_WIDGET (prefs_dialog),"showicons_checkbutton"), FALSE);
             gtk_toggle_button_set_active (GTK_TOGGLE_BUTTON (lookup_widget(GTK_WIDGET (prefs_dialog),"showicons_checkbutton")), FALSE);
         }
+#if 0
         else
         {
             gtk_toggle_button_set_active (GTK_TOGGLE_BUTTON (lookup_widget(GTK_WIDGET (prefs_dialog),"showicons_checkbutton")),
                                             settings.menuIcons );
         }
+#endif
 
         gtk_toggle_button_set_active (GTK_TOGGLE_BUTTON (lookup_widget(GTK_WIDGET (prefs_dialog),"single_click_checkbutton")),
                                         settings.singleClick );

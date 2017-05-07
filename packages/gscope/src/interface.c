@@ -142,7 +142,7 @@ create_gscope_main (void)
   if (gscope_main_icon_pixbuf)
     {
       gtk_window_set_icon (GTK_WINDOW (gscope_main), gscope_main_icon_pixbuf);
-      gdk_pixbuf_unref (gscope_main_icon_pixbuf);
+      g_object_unref (gscope_main_icon_pixbuf);
     }
 
   vbox1 = gtk_vbox_new (FALSE, 0);
@@ -3246,7 +3246,7 @@ create_gscope_splash (void)
   if (gscope_splash_icon_pixbuf)
     {
       gtk_window_set_icon (GTK_WINDOW (gscope_splash), gscope_splash_icon_pixbuf);
-      gdk_pixbuf_unref (gscope_splash_icon_pixbuf);
+      g_object_unref (gscope_splash_icon_pixbuf);
     }
   gtk_window_set_skip_pager_hint (GTK_WINDOW (gscope_splash), TRUE);
   gtk_window_set_gravity (GTK_WINDOW (gscope_splash), GDK_GRAVITY_CENTER);
