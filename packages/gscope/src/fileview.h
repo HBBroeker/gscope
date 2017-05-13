@@ -1,4 +1,4 @@
-#include <config.h> /* for GTK3_BUILD */
+#include "config.h" /* for GTK3_BUILD */
 #ifdef GTK3_BUILD
 #include <gtksourceview/gtksource.h>
 #else

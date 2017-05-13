@@ -3,7 +3,7 @@
  *
  */
 
-#include <config.h>
+#include "config.h"
 #include <gtk/gtk.h>
 #include <errno.h>
 #include <string.h>
